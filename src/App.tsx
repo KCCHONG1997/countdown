@@ -64,11 +64,10 @@ const App: React.FC = () => {
   // Handle click to change the message
   const handleClick = () => {
     const messages = [
+      "Happy Birthday My Pufferfish!",
       "I just want to let you know, I love you",
       "You're the best thing that ever happened to me",
-      "Every moment with you is a treasure",
-      "Forever and always, my love",
-      "You make my heart smile 💖",
+      "Forever and always, my love💖",
     ];
     setMessage(messages[Math.floor(Math.random() * messages.length)]);
   };
