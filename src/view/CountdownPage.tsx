@@ -21,6 +21,7 @@ const CountdownText = styled.h1`
 const CountdownPage: React.FC<{ onCountdownFinish: () => void }> = ({ onCountdownFinish }) => {
     useEffect(() => {
         const targetDate = new Date('December 24, 2024 00:00:00').getTime();
+        // const targetDate = new Date('December 15, 2024 16:43:00').getTime();
 
         const interval = setInterval(() => {
             const now = new Date().getTime();

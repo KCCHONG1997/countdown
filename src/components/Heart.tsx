@@ -5,6 +5,7 @@ const Heart = styled(motion.div)`
   position: absolute;
   width: 20px;
   height: 20px;
+  z-index: -1;
   background-color: #ff69b4;
   clip-path: polygon(
     50% 0%, 

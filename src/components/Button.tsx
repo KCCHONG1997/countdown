@@ -13,6 +13,7 @@ const StyledButton = styled.button`
   cursor: pointer;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s;
+  z-index:10;
 
   &:hover {
     background-color: #ff85c0;

@@ -9,12 +9,12 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: 'Times New Roman', cursive, sans-serif;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
     overflow: hidden;
     background: ${(props: { countdownFinished: boolean }) =>
-      props.countdownFinished ? 'linear-gradient(120deg, #ffd1dc, #ffe4e1)' : '#000'};
+    props.countdownFinished ? 'linear-gradient(120deg, #ffd1dc, #ffe4e1)' : '#000'};
     color: ${(props: { countdownFinished: boolean }) =>
-      props.countdownFinished ? '#ff69b4' : '#fff'};
+    props.countdownFinished ? '#ff69b4' : '#fff'};
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,6 +38,8 @@ const App: React.FC = () => {
           <CountdownPage onCountdownFinish={() => setCountdownFinished(true)} />
         </>
       )}
+
+
     </>
   );
 };
