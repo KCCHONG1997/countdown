@@ -67,13 +67,14 @@ const MovingButton = styled.button<{ x: number; y: number }>`
   left: ${(props) => props.x}px;
   top: ${(props) => props.y}px;
   transform: translate(-50%, -50%);
-  background: #dba9a2;
+  background:rgb(219, 185, 181);
   color: #4e6e58;
-  border: none;
+  border: 3px solid #4e6e58;
   padding: 10px 20px;
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  font-weight: bold;
   transition: all 0.1s ease-in-out;
 
   &:hover {
@@ -85,7 +86,6 @@ const LoveMessagePage: React.FC = () => {
   const [messageIndex, setMessageIndex] = useState(0);
   const [hearts, setHearts] = useState<{ x: number; y: number; scale: number; emoji: string }[]>([]);
   const [buttonPosition, setButtonPosition] = useState({ x: window.innerWidth / 2, y: window.innerHeight - 100 });
-  const [hideButton, setHideButton] = useState(false);
 
   // Handle button movement based on mouse position
   const handleMouseMove = (e: React.MouseEvent) => {
@@ -113,9 +113,6 @@ const LoveMessagePage: React.FC = () => {
   const handleButtonClick = () => {
     if (messageIndex < messages.length - 1) {
       setMessageIndex((prevIndex) => prevIndex + 1);
-    } else {
-      // Hide the button when the last message is displayed
-      setHideButton(true);
     }
   };
 
@@ -165,15 +162,13 @@ const LoveMessagePage: React.FC = () => {
           </RandomEmoji>
         ))}
 
-        {!hideButton && (
-          <MovingButton
-            onClick={handleButtonClick}
-            x={buttonPosition.x}
-            y={buttonPosition.y}
-          >
-            {messageIndex < messages.length - 1 ? "Next Message" : "Don't Touch Me!"}
-          </MovingButton>
-        )}
+        <MovingButton
+          onClick={handleButtonClick}
+          x={buttonPosition.x}
+          y={buttonPosition.y}
+        >
+          {messageIndex < messages.length - 1 ? "Next Message" : "Don't Touch Me!"}
+        </MovingButton>
       </div>
     </>
   );

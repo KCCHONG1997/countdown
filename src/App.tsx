@@ -3,7 +3,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import CountdownPage from './view/CountdownPage';
 import LoveMessagePage from './view/LoveMessagePage';
 
-const debugMode = true; // Set to `false` for production
+const debugMode = false; // Set to `false` for production
 
 const GlobalStyle = createGlobalStyle`
   body {
